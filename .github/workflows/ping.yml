@@ -1,1 +1,18 @@
 
+name: Keep Render Server Awake
+
+# Khi nào chạy
+on:
+  schedule:
+    - cron: "*/5 * * * *"  # chạy mỗi 5 phút
+  workflow_dispatch:        # cho phép chạy thủ công
+
+jobs:
+  ping-server:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Render Server
+        run: |
+          echo "Đang ping server Render..."
+          curl -fsS "https://emxinore.onrender.com" || echo "Server không phản hồi"
+          
