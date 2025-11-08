@@ -14,5 +14,5 @@ jobs:
       - name: Ping Render Server
         run: |
           echo "Đang ping server Render..."
-          curl -fsS "https://emxinore.onrender.com" || echo "Server không phản hồi"
+          curl -fsS "https://keysever-3.onrender.com/" || echo "Server không phản hồi"
           
